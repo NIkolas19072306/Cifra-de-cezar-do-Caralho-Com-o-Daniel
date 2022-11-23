@@ -1,12 +1,20 @@
 var tela = document.querySelector('canvas'); // Váriavel que seleciona a tela.
 var pincel = tela.getContext('2d'); // Váriavel usada para pintar na tela.
+var botao1 = document.querySelector("#botao1")
+var botao2 = document.querySelector("#botao2")
+var saidah31 = document.querySelector("#h31")
+var saidah32 = document.querySelector("#h32")
+var texto1 = document.querySelector("#texto1")
+var texto2 = document.querySelector("#texto2")
 
 // Váriavel que define a posição do objeto.
 var x = 12.5;
 var y = 37.5;
-
+var letra
+var frasecrip
+var frasedescrip
 //chave de criptografia inicial:
-var chave = 1;
+var chave;
 
 // códigos do teclado
 var esquerda = 37
@@ -30,66 +38,53 @@ function letra1() {
     pincel.font = '32px serif'
     pincel.fillStyle = "black"
     pincel.fillText("1", 5, 22.5, 15)
-
 }
 
 function letra2() {
     pincel.font = '32px serif'
     pincel.fillStyle = "black"
     pincel.fillText("2", 30, 22.5, 15)
-
 }
 function letra3() {
     pincel.font = '32px serif'
     pincel.fillStyle = "black"
     pincel.fillText("3", 55, 22.5, 15)
-
 }
 function letra4() {
     pincel.font = '32px serif'
     pincel.fillStyle = "black"
     pincel.fillText("4", 80, 22.5, 15)
-
 }
 function letra5() {
     pincel.font = '32px serif'
     pincel.fillStyle = "black"
     pincel.fillText("5", 105, 22.5, 15)
-
 }
 function letra6() {
     pincel.font = '32px serif'
     pincel.fillStyle = "black"
     pincel.fillText("6", 130, 22.5, 15)
-
 }
 function letra7() {
     pincel.font = '32px serif'
     pincel.fillStyle = "black"
     pincel.fillText("7", 155, 22.5, 15)
-
 }
 function letra8() {
     pincel.font = '32px serif'
     pincel.fillStyle = "black"
     pincel.fillText("8", 180, 22.5, 15)
-
 }
 function letra9() {
     pincel.font = '32px serif'
     pincel.fillStyle = "black"
     pincel.fillText("9", 205, 22.5, 15)
-
 }
 function letra10() {
     pincel.font = '32px serif'
     pincel.fillStyle = "black"
     pincel.fillText("10", 224, 22.5, 25)
-
 }
-
-
-
 
 // função que desenha o grid.
 function limpaTela() {
@@ -122,9 +117,11 @@ function atualizaTela() {
     letra9()
     letra10()
     desenhaCirculo(x, y, 10)
+
 }
 
-setInterval(atualizaTela, 20); // função para chamar o "atualizaTela" em um intervalo de tempo dado como segundo parâmetro.
+// função para chamar o "atualizaTela" em um intervalo de tempo dado como segundo parâmetro.
+setInterval(atualizaTela, 20)
 
 // função que determina pra onde o objeto irá se movimentar.
 function leDoTeclado(evento) {
@@ -142,15 +139,50 @@ function leDoTeclado(evento) {
         x = x + taxa;
     }
 
-    chave = (x/25)+0.5;
-
-    
-    alert(chave)
-
 }
 
+//arrumar chave e botao
 
 document.onkeydown = leDoTeclado;
+
+botao1.addEventListener("click", (e) => {
+  
+    if (chave = 1) {
+      
+        frasedescrip = texto1.value
+        frasedescrip = frasedescrip.replace("A", "B")
+        frasedescrip = frasedescrip.replace("B", "C")
+        frasedescrip = frasedescrip.replace("C", "D")
+        frasedescrip = frasedescrip.replace("D", "E")
+        frasedescrip = frasedescrip.replace("E", "F")
+        frasedescrip = frasedescrip.replace("F", "G")
+        frasedescrip = frasedescrip.replace("G", "H")
+        frasedescrip = frasedescrip.replace("H", "I")
+        frasedescrip = frasedescrip.replace("I", "J")
+        frasedescrip = frasedescrip.replace("J", "K")
+        frasedescrip = frasedescrip.replace("K", "L")
+        frasedescrip = frasedescrip.replace("L", "M")
+        frasedescrip = frasedescrip.replace("M", "N")
+        frasedescrip = frasedescrip.replace("N", "O")
+        frasedescrip = frasedescrip.replace("O", "P")
+        frasedescrip = frasedescrip.replace("P", "Q")
+        frasedescrip = frasedescrip.replace("Q", "R")
+        frasedescrip = frasedescrip.replace("R", "S")
+        frasedescrip = frasedescrip.replace("S", "T")
+        frasedescrip = frasedescrip.replace("T", "U")
+        frasedescrip = frasedescrip.replace("U", "V")
+        frasedescrip = frasedescrip.replace("V", "W")
+        frasedescrip = frasedescrip.replace("W", "X")
+        frasedescrip = frasedescrip.replace("X", "Y")
+        frasedescrip = frasedescrip.replace("Y", "Z")
+        frasedescrip = frasedescrip.replace("Z", "A")
+    }
+
+    saidah31.innerText = frasedescrip
+    e.preventDefault()
+})
+
+
 
 
 
