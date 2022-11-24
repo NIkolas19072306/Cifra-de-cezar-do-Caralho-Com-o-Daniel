@@ -224,7 +224,7 @@ function leDoTeclado(evento) {
     } else if (evento.keyCode == esquerda && x - taxa > 0) {
         x = x - taxa;
 
-    } else if (evento.keyCode == direita && x + taxa < 650) {
+    } else if (evento.keyCode == direita && x + taxa < 625) {
         x = x + taxa;
     }
 
@@ -237,7 +237,7 @@ document.onkeydown = leDoTeclado;
 botao1.addEventListener("click", (e) => {
 
     cod = (x/25) + 0.5
-chave = cod
+    chave = cod
     if (chave = 1) {
 
         frasedescrip = texto1.value
