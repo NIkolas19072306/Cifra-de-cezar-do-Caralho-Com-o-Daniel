@@ -24,140 +24,141 @@ var baixo = 40
 var taxa = 25;
 
 // função que cria o objeto.
-function desenhaCirculo(x, y, raio) {
 
-    pincel.fillStyle = 'black'
-    pincel.beginPath()
-    pincel.arc(x, y, raio, 0, 2 * Math.PI)
-    pincel.fill()
-}
+    function desenhaCirculo(x, y, raio) {
 
-function letra1() {
-    pincel.font = '32px serif'
-    pincel.fillStyle = "black"
-    pincel.fillText("1", 5, 22.5, 15)
-}
+        pincel.fillStyle = 'black'
+        pincel.beginPath()
+        pincel.arc(x, y, raio, 0, 2 * Math.PI)
+        pincel.fill()
+    }
 
-function letra2() {
-    pincel.font = '32px serif'
-    pincel.fillStyle = "black"
-    pincel.fillText("2", 30, 22.5, 15)
-}
-function letra3() {
-    pincel.font = '32px serif'
-    pincel.fillStyle = "black"
-    pincel.fillText("3", 55, 22.5, 15)
-}
-function letra4() {
-    pincel.font = '32px serif'
-    pincel.fillStyle = "black"
-    pincel.fillText("4", 80, 22.5, 15)
-}
-function letra5() {
-    pincel.font = '32px serif'
-    pincel.fillStyle = "black"
-    pincel.fillText("5", 105, 22.5, 15)
-}
-function letra6() {
-    pincel.font = '32px serif'
-    pincel.fillStyle = "black"
-    pincel.fillText("6", 130, 22.5, 15)
-}
-function letra7() {
-    pincel.font = '32px serif'
-    pincel.fillStyle = "black"
-    pincel.fillText("7", 155, 22.5, 15)
-}
-function letra8() {
-    pincel.font = '32px serif'
-    pincel.fillStyle = "black"
-    pincel.fillText("8", 180, 22.5, 15)
-}
-function letra9() {
-    pincel.font = '32px serif'
-    pincel.fillStyle = "black"
-    pincel.fillText("9", 205, 22.5, 15)
-}
-function letra10() {
-    pincel.font = '32px serif'
-    pincel.fillStyle = "black"
-    pincel.fillText("10", 225, 22.5, 25)
-}
-function letra11() {
-    pincel.font = '32px serif'
-    pincel.fillStyle = "black"
-    pincel.fillText("11", 250, 22.5, 25)
-}
-function letra12() {
-    pincel.font = '32px serif'
-    pincel.fillStyle = "black"
-    pincel.fillText("12", 275, 22.5, 25)
-}
-function letra13() {
-    pincel.font = '32px serif'
-    pincel.fillStyle = "black"
-    pincel.fillText("13", 300, 22.5, 25)
-}
-function letra14() {
-    pincel.font = '32px serif'
-    pincel.fillStyle = "black"
-    pincel.fillText("14", 325, 22.5, 25)
-}
-function letra15() {
-    pincel.font = '32px serif'
-    pincel.fillStyle = "black"
-    pincel.fillText("15", 350, 22.5, 25)
-}
-function letra16() {
-    pincel.font = '32px serif'
-    pincel.fillStyle = "black"
-    pincel.fillText("16", 375, 22.5, 25)
-}
-function letra17() {
-    pincel.font = '32px serif'
-    pincel.fillStyle = "black"
-    pincel.fillText("17", 400, 22.5, 25)
-}
-function letra18() {
-    pincel.font = '32px serif'
-    pincel.fillStyle = "black"
-    pincel.fillText("18", 425, 22.5, 25)
-}
-function letra19() {
-    pincel.font = '32px serif'
-    pincel.fillStyle = "black"
-    pincel.fillText("19", 450, 22.5, 25)
-}
-function letra20() {
-    pincel.font = '32px serif'
-    pincel.fillStyle = "black"
-    pincel.fillText("20", 475, 22.5, 25)
-}
-function letra21() {
-    pincel.font = '32px serif'
-    pincel.fillStyle = "black"
-    pincel.fillText("21", 500, 22.5, 25)
-}
-function letra22() {
-    pincel.font = '32px serif'
-    pincel.fillStyle = "black"
-    pincel.fillText("22", 525, 22.5, 25)
-}
-function letra23() {
-    pincel.font = '32px serif'
-    pincel.fillStyle = "black"
-    pincel.fillText("23", 550, 22.5, 25)
-}
-function letra24() {
-    pincel.font = '32px serif'
-    pincel.fillStyle = "black"
-    pincel.fillText("24", 575, 22.5, 25)
-}
-function letra25() {
-    pincel.font = '32px serif'
-    pincel.fillStyle = "black"
-    pincel.fillText("25", 600, 22.5, 25)
-}
+    function letra1() {
+        pincel.font = '32px serif'
+        pincel.fillStyle = "black"
+        pincel.fillText("1", 5, 22.5, 15)
+    }
+
+    function letra2() {
+        pincel.font = '32px serif'
+        pincel.fillStyle = "black"
+        pincel.fillText("2", 30, 22.5, 15)
+    }
+    function letra3() {
+        pincel.font = '32px serif'
+        pincel.fillStyle = "black"
+        pincel.fillText("3", 55, 22.5, 15)
+    }
+    function letra4() {
+        pincel.font = '32px serif'
+        pincel.fillStyle = "black"
+        pincel.fillText("4", 80, 22.5, 15)
+    }
+    function letra5() {
+        pincel.font = '32px serif'
+        pincel.fillStyle = "black"
+        pincel.fillText("5", 105, 22.5, 15)
+    }
+    function letra6() {
+        pincel.font = '32px serif'
+        pincel.fillStyle = "black"
+        pincel.fillText("6", 130, 22.5, 15)
+    }
+    function letra7() {
+        pincel.font = '32px serif'
+        pincel.fillStyle = "black"
+        pincel.fillText("7", 155, 22.5, 15)
+    }
+    function letra8() {
+        pincel.font = '32px serif'
+        pincel.fillStyle = "black"
+        pincel.fillText("8", 180, 22.5, 15)
+    }
+    function letra9() {
+        pincel.font = '32px serif'
+        pincel.fillStyle = "black"
+        pincel.fillText("9", 205, 22.5, 15)
+    }
+    function letra10() {
+        pincel.font = '32px serif'
+        pincel.fillStyle = "black"
+        pincel.fillText("10", 225, 22.5, 25)
+    }
+    function letra11() {
+        pincel.font = '32px serif'
+        pincel.fillStyle = "black"
+        pincel.fillText("11", 250, 22.5, 25)
+    }
+    function letra12() {
+        pincel.font = '32px serif'
+        pincel.fillStyle = "black"
+        pincel.fillText("12", 275, 22.5, 25)
+    }
+    function letra13() {
+        pincel.font = '32px serif'
+        pincel.fillStyle = "black"
+        pincel.fillText("13", 300, 22.5, 25)
+    }
+    function letra14() {
+        pincel.font = '32px serif'
+        pincel.fillStyle = "black"
+        pincel.fillText("14", 325, 22.5, 25)
+    }
+    function letra15() {
+        pincel.font = '32px serif'
+        pincel.fillStyle = "black"
+        pincel.fillText("15", 350, 22.5, 25)
+    }
+    function letra16() {
+        pincel.font = '32px serif'
+        pincel.fillStyle = "black"
+        pincel.fillText("16", 375, 22.5, 25)
+    }
+    function letra17() {
+        pincel.font = '32px serif'
+        pincel.fillStyle = "black"
+        pincel.fillText("17", 400, 22.5, 25)
+    }
+    function letra18() {
+        pincel.font = '32px serif'
+        pincel.fillStyle = "black"
+        pincel.fillText("18", 425, 22.5, 25)
+    }
+    function letra19() {
+        pincel.font = '32px serif'
+        pincel.fillStyle = "black"
+        pincel.fillText("19", 450, 22.5, 25)
+    }
+    function letra20() {
+        pincel.font = '32px serif'
+        pincel.fillStyle = "black"
+        pincel.fillText("20", 475, 22.5, 25)
+    }
+    function letra21() {
+        pincel.font = '32px serif'
+        pincel.fillStyle = "black"
+        pincel.fillText("21", 500, 22.5, 25)
+    }
+    function letra22() {
+        pincel.font = '32px serif'
+        pincel.fillStyle = "black"
+        pincel.fillText("22", 525, 22.5, 25)
+    }
+    function letra23() {
+        pincel.font = '32px serif'
+        pincel.fillStyle = "black"
+        pincel.fillText("23", 550, 22.5, 25)
+    }
+    function letra24() {
+        pincel.font = '32px serif'
+        pincel.fillStyle = "black"
+        pincel.fillText("24", 575, 22.5, 25)
+    }
+    function letra25() {
+        pincel.font = '32px serif'
+        pincel.fillStyle = "black"
+        pincel.fillText("25", 600, 22.5, 25)
+    }
 
 
 // função que desenha o grid.
@@ -236,7 +237,7 @@ document.onkeydown = leDoTeclado;
 
 botao1.addEventListener("click", (e) => {
 
-    cod = (x/25) + 0.5
+    cod = (x / 25) + 0.5
     chave = cod
     if (chave = 1) {
 
@@ -995,9 +996,9 @@ botao1.addEventListener("click", (e) => {
 })
 
 botao2.addEventListener("click", (e) => {
-   
-    
-    cod = (x/25) + 0.5
+
+
+    cod = (x / 25) + 0.5
 
     if (chave = 1) {
 

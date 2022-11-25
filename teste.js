@@ -229,7 +229,9 @@ function leDoTeclado(evento) {
 
 }
 
-
+var cryptotam
+var crypto2
+var crypto
 
 document.onkeydown = leDoTeclado;
 
@@ -238,22 +240,155 @@ botao1.addEventListener("click", (e) => {
     cod = (x / 25) + 0.5
     chave = cod
 
-    
-    var textoo = texto1.value;
-    resultado = textoo.split("");
-    teste = tesultado.length
 
-    saidah31.innerText = resultado
+    var crypto = texto1.value;
+    var crypto2
+    crypto = crypto.split("");
+    crypto2 = crypto
+    cryptotam = crypto.length
+
+    for (a = 0; a <= cryptotam; a++) {
+        crypto[a] = crypto[a].replace(/A/gi, "B")
+        if (crypto[a] != crypto2[a]) {
+            break
+        }
+        else { }
+        crypto[a] = crypto[a].replace(/B/gi, "C")
+        if (crypto[a] != crypto2[a]) {
+            break
+        }
+        else { }
+        crypto[a] = crypto[a].replace(/C/gi, "D")
+        if (crypto[a] != crypto2[a]) {
+            break
+        }
+        else { }
+        crypto[a] = crypto[a].replace(/D/gi, "E")
+        if (crypto[a] != crypto2[a]) {
+            break
+        }
+        else { }
+        crypto[a] = crypto[a].replace(/E/gi, "F")
+        if (crypto[a] != crypto2[a]) {
+            break
+        }
+        else { }
+        crypto[a] = crypto[a].replace(/F/gi, "G")
+        if (crypto[a] != crypto2[a]) {
+            break
+        }
+        else { }
+        crypto[a] = crypto[a].replace(/G/gi, "H")
+        if (crypto[a] != crypto2[a]) {
+            break
+        }
+        else { }
+        crypto[a] = crypto[a].replace(/H/gi, "I")
+        if (crypto[a] != crypto2[a]) {
+            break
+        }
+        else { }
+        crypto[a] = crypto[a].replace(/I/gi, "J")
+        if (crypto[a] != crypto2[a]) {
+            break
+        }
+        else { }
+        crypto[a] = crypto[a].replace(/J/gi, "K")
+        if (crypto[a] != crypto2[a]) {
+            break
+        }
+        else { }
+        crypto[a] = crypto[a].replace(/K/gi, "L")
+        if (crypto[a] != crypto2[a]) {
+            break
+        }
+        else { }
+        crypto[a] = crypto[a].replace(/L/gi, "M")
+        if (crypto[a] != crypto2[a]) {
+            break
+        }
+        else { }
+        crypto[a] = crypto[a].replace(/M/gi, "N")
+        if (crypto[a] != crypto2[a]) {
+            break
+        }
+        else { }
+        crypto[a] = crypto[a].replace(/N/gi, "O")
+        if (crypto[a] != crypto2[a]) {
+            break
+        }
+        else { }
+        crypto[a] = crypto[a].replace(/O/gi, "P")
+        if (crypto[a] != crypto2[a]) {
+            break
+        }
+        else { }
+        crypto[a] = crypto[a].replace(/P/gi, "Q")
+        if (crypto[a] != crypto2[a]) {
+            break
+        }
+        else { }
+        crypto[a] = crypto[a].replace(/Q/gi, "R")
+        if (crypto[a] != crypto2[a]) {
+            break
+        }
+        else { }
+        crypto[a] = crypto[a].replace(/R/gi, "S")
+        if (crypto[a] != crypto2[a]) {
+            break
+        }
+        else { }
+        crypto[a] = crypto[a].replace(/S/gi, "T")
+        if (crypto[a] != crypto2[a]) {
+            break
+        }
+        else { }
+        crypto[a] = crypto[a].replace(/T/gi, "U")
+        if (crypto[a] != crypto2[a]) {
+            break
+        }
+        else { }
+        crypto[a] = crypto[a].replace(/U/gi, "V")
+        if (crypto[a] != crypto2[a]) {
+            break
+        }
+        else { }
+        crypto[a] = crypto[a].replace(/V/gi, "W")
+        if (crypto[a] != crypto2[a]) {
+            break
+        }
+        else { }
+        crypto[a] = crypto[a].replace(/W/gi, "Z")
+        if (crypto[a] != crypto2[a]) {
+            break
+        }
+        else { }
+        crypto[a] = crypto[a].replace(/X/gi, "Y")
+        if (crypto[a] != crypto2[a]) {
+            break
+        }
+        else { }
+        crypto[a] = crypto[a].replace(/Y/gi, "Z")
+        if (crypto[a] != crypto2[a]) {
+            break
+        }
+        else { }
+        crypto[a] = crypto[a].replace(/Z/gi, "A")
+        if (crypto[a] != crypto2[a]) {
+            break
+        }
+        else { }
+    }
+
+
+    saidah31.innerText = `${crypto}`
     e.preventDefault()
 
 
 })
 
-/*      
-
-
-
-var texton
+/* 
+    var texton
     var texton2
     var texton3
     var texton4
@@ -284,9 +419,13 @@ var texton
 
     frasedescrip = texto1.value
     texton = frasedescrip.replace(/A/gi, "B")
+    
     texton2 = texton.replace(/B/gi, "C")
+   
     texton3 = texton2.replace(/C/gi, "D")
+   
     texton4 = texton3.replace(/D/gi, "E")
+  
     texton5 = texton4.replace(/E/gi, "F")
     texton6 = texton5.replace(/F/gi, "G")
     texton7 = texton6.replace(/G/gi, "H")
