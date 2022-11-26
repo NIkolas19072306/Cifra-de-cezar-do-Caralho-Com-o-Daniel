@@ -2,14 +2,14 @@ var tela = document.querySelector('canvas'); // Váriavel que seleciona a tela.
 var pincel = tela.getContext('2d'); // Váriavel usada para pintar na tela.
 var botao1 = document.querySelector("#botao1")
 var botao2 = document.querySelector("#botao2")
-var saidah31 = document.querySelector("#h31")
-var saidah32 = document.querySelector("#h32")
-var texto1 = document.querySelector("#texto1")
-var texto2 = document.querySelector("#texto2")
+var saidah31 = document.querySelector("#h31")  // Saida do texto cryptografado
+var saidah32 = document.querySelector("#h32")// Saida do texto descryptografado
+var texto1 = document.querySelector("#texto1"); //Entrada do texto para cryptografar
+var texto2 = document.querySelector("#texto2")//Entrada do texto para descryptografar
 
 // Váriavel que define a posição do objeto.
-var x = 12.5;
-var y = 37.5;
+var x = 12.5
+var y = 37.5
 
 
 // códigos do teclado
@@ -19,149 +19,158 @@ var direita = 39
 var baixo = 40
 
 // Quantidade de pixel que o objeto se movimenta.
-var taxa = 25;
+var taxa = 25
+
+//Variaveis para Cryptografia
+var cryptogTam
+var cryptog2
+var cryptog
+var alfabeto 
+var alfabetoTam
+
+
 
 // função que cria o objeto.
-{
-    function desenhaCirculo(x, y, raio) {
 
-        pincel.fillStyle = 'black'
-        pincel.beginPath()
-        pincel.arc(x, y, raio, 0, 2 * Math.PI)
-        pincel.fill()
-    }
+function desenhaCirculo(x, y, raio) {
 
-    function letra1() {
-        pincel.font = '32px serif'
-        pincel.fillStyle = "black"
-        pincel.fillText("1", 5, 22.5, 15)
-    }
-
-    function letra2() {
-        pincel.font = '32px serif'
-        pincel.fillStyle = "black"
-        pincel.fillText("2", 30, 22.5, 15)
-    }
-    function letra3() {
-        pincel.font = '32px serif'
-        pincel.fillStyle = "black"
-        pincel.fillText("3", 55, 22.5, 15)
-    }
-    function letra4() {
-        pincel.font = '32px serif'
-        pincel.fillStyle = "black"
-        pincel.fillText("4", 80, 22.5, 15)
-    }
-    function letra5() {
-        pincel.font = '32px serif'
-        pincel.fillStyle = "black"
-        pincel.fillText("5", 105, 22.5, 15)
-    }
-    function letra6() {
-        pincel.font = '32px serif'
-        pincel.fillStyle = "black"
-        pincel.fillText("6", 130, 22.5, 15)
-    }
-    function letra7() {
-        pincel.font = '32px serif'
-        pincel.fillStyle = "black"
-        pincel.fillText("7", 155, 22.5, 15)
-    }
-    function letra8() {
-        pincel.font = '32px serif'
-        pincel.fillStyle = "black"
-        pincel.fillText("8", 180, 22.5, 15)
-    }
-    function letra9() {
-        pincel.font = '32px serif'
-        pincel.fillStyle = "black"
-        pincel.fillText("9", 205, 22.5, 15)
-    }
-    function letra10() {
-        pincel.font = '32px serif'
-        pincel.fillStyle = "black"
-        pincel.fillText("10", 225, 22.5, 25)
-    }
-    function letra11() {
-        pincel.font = '32px serif'
-        pincel.fillStyle = "black"
-        pincel.fillText("11", 250, 22.5, 25)
-    }
-    function letra12() {
-        pincel.font = '32px serif'
-        pincel.fillStyle = "black"
-        pincel.fillText("12", 275, 22.5, 25)
-    }
-    function letra13() {
-        pincel.font = '32px serif'
-        pincel.fillStyle = "black"
-        pincel.fillText("13", 300, 22.5, 25)
-    }
-    function letra14() {
-        pincel.font = '32px serif'
-        pincel.fillStyle = "black"
-        pincel.fillText("14", 325, 22.5, 25)
-    }
-    function letra15() {
-        pincel.font = '32px serif'
-        pincel.fillStyle = "black"
-        pincel.fillText("15", 350, 22.5, 25)
-    }
-    function letra16() {
-        pincel.font = '32px serif'
-        pincel.fillStyle = "black"
-        pincel.fillText("16", 375, 22.5, 25)
-    }
-    function letra17() {
-        pincel.font = '32px serif'
-        pincel.fillStyle = "black"
-        pincel.fillText("17", 400, 22.5, 25)
-    }
-    function letra18() {
-        pincel.font = '32px serif'
-        pincel.fillStyle = "black"
-        pincel.fillText("18", 425, 22.5, 25)
-    }
-    function letra19() {
-        pincel.font = '32px serif'
-        pincel.fillStyle = "black"
-        pincel.fillText("19", 450, 22.5, 25)
-    }
-    function letra20() {
-        pincel.font = '32px serif'
-        pincel.fillStyle = "black"
-        pincel.fillText("20", 475, 22.5, 25)
-    }
-    function letra21() {
-        pincel.font = '32px serif'
-        pincel.fillStyle = "black"
-        pincel.fillText("21", 500, 22.5, 25)
-    }
-    function letra22() {
-        pincel.font = '32px serif'
-        pincel.fillStyle = "black"
-        pincel.fillText("22", 525, 22.5, 25)
-    }
-    function letra23() {
-        pincel.font = '32px serif'
-        pincel.fillStyle = "black"
-        pincel.fillText("23", 550, 22.5, 25)
-    }
-    function letra24() {
-        pincel.font = '32px serif'
-        pincel.fillStyle = "black"
-        pincel.fillText("24", 575, 22.5, 25)
-    }
-    function letra25() {
-        pincel.font = '32px serif'
-        pincel.fillStyle = "black"
-        pincel.fillText("25", 600, 22.5, 25)
-    }
-
+    pincel.fillStyle = 'black'
+    pincel.beginPath()
+    pincel.arc(x, y, raio, 0, 2 * Math.PI)
+    pincel.fill()
 }
+
+function letra1() {
+    pincel.font = '32px serif'
+    pincel.fillStyle = "black"
+    pincel.fillText("1", 5, 22.5, 15)
+}
+
+function letra2() {
+    pincel.font = '32px serif'
+    pincel.fillStyle = "black"
+    pincel.fillText("2", 30, 22.5, 15)
+}
+function letra3() {
+    pincel.font = '32px serif'
+    pincel.fillStyle = "black"
+    pincel.fillText("3", 55, 22.5, 15)
+}
+function letra4() {
+    pincel.font = '32px serif'
+    pincel.fillStyle = "black"
+    pincel.fillText("4", 80, 22.5, 15)
+}
+function letra5() {
+    pincel.font = '32px serif'
+    pincel.fillStyle = "black"
+    pincel.fillText("5", 105, 22.5, 15)
+}
+function letra6() {
+    pincel.font = '32px serif'
+    pincel.fillStyle = "black"
+    pincel.fillText("6", 130, 22.5, 15)
+}
+function letra7() {
+    pincel.font = '32px serif'
+    pincel.fillStyle = "black"
+    pincel.fillText("7", 155, 22.5, 15)
+}
+function letra8() {
+    pincel.font = '32px serif'
+    pincel.fillStyle = "black"
+    pincel.fillText("8", 180, 22.5, 15)
+}
+function letra9() {
+    pincel.font = '32px serif'
+    pincel.fillStyle = "black"
+    pincel.fillText("9", 205, 22.5, 15)
+}
+function letra10() {
+    pincel.font = '32px serif'
+    pincel.fillStyle = "black"
+    pincel.fillText("10", 225, 22.5, 25)
+}
+function letra11() {
+    pincel.font = '32px serif'
+    pincel.fillStyle = "black"
+    pincel.fillText("11", 250, 22.5, 25)
+}
+function letra12() {
+    pincel.font = '32px serif'
+    pincel.fillStyle = "black"
+    pincel.fillText("12", 275, 22.5, 25)
+}
+function letra13() {
+    pincel.font = '32px serif'
+    pincel.fillStyle = "black"
+    pincel.fillText("13", 300, 22.5, 25)
+}
+function letra14() {
+    pincel.font = '32px serif'
+    pincel.fillStyle = "black"
+    pincel.fillText("14", 325, 22.5, 25)
+}
+function letra15() {
+    pincel.font = '32px serif'
+    pincel.fillStyle = "black"
+    pincel.fillText("15", 350, 22.5, 25)
+}
+function letra16() {
+    pincel.font = '32px serif'
+    pincel.fillStyle = "black"
+    pincel.fillText("16", 375, 22.5, 25)
+}
+function letra17() {
+    pincel.font = '32px serif'
+    pincel.fillStyle = "black"
+    pincel.fillText("17", 400, 22.5, 25)
+}
+function letra18() {
+    pincel.font = '32px serif'
+    pincel.fillStyle = "black"
+    pincel.fillText("18", 425, 22.5, 25)
+}
+function letra19() {
+    pincel.font = '32px serif'
+    pincel.fillStyle = "black"
+    pincel.fillText("19", 450, 22.5, 25)
+}
+function letra20() {
+    pincel.font = '32px serif'
+    pincel.fillStyle = "black"
+    pincel.fillText("20", 475, 22.5, 25)
+}
+function letra21() {
+    pincel.font = '32px serif'
+    pincel.fillStyle = "black"
+    pincel.fillText("21", 500, 22.5, 25)
+}
+function letra22() {
+    pincel.font = '32px serif'
+    pincel.fillStyle = "black"
+    pincel.fillText("22", 525, 22.5, 25)
+}
+function letra23() {
+    pincel.font = '32px serif'
+    pincel.fillStyle = "black"
+    pincel.fillText("23", 550, 22.5, 25)
+}
+function letra24() {
+    pincel.font = '32px serif'
+    pincel.fillStyle = "black"
+    pincel.fillText("24", 575, 22.5, 25)
+}
+function letra25() {
+    pincel.font = '32px serif'
+    pincel.fillStyle = "black"
+    pincel.fillText("25", 600, 22.5, 25)
+}
+
+
 // função que desenha o grid.
 function limpaTela() {
-    var descer = 0;
+    var descer = 0
     while (descer <= 50) {
         for (var imp = 0; imp <= 625; imp = imp + 25) {
             pincel.fillStyle = "white"
@@ -218,10 +227,10 @@ function leDoTeclado(evento) {
         y = y - taxa;
 
     } else if (evento.keyCode == baixo && y + taxa < 50) {
-        y = y + taxa;
+        y = y + taxa
 
     } else if (evento.keyCode == esquerda && x - taxa > 0) {
-        x = x - taxa;
+        x = x - taxa
 
     } else if (evento.keyCode == direita && x + taxa < 625) {
         x = x + taxa;
@@ -229,229 +238,63 @@ function leDoTeclado(evento) {
 
 }
 
-var cryptotam
-var crypto2
-var crypto
+
 
 document.onkeydown = leDoTeclado;
+//Botão 1
 
 botao1.addEventListener("click", (e) => {
 
     cod = (x / 25) + 0.5
     chave = cod
 
+    cryptog = texto1.value//Texto de entrada a ser codificado
+    cryptog = cryptog.split("")//Quebra do texto em array de letras
+    cryptog2 = cryptog.slice()//Copia de vetor
+    cryptogTam = cryptog.length //Tamanho do Texto
 
-    var crypto = texto1.value;
-    var crypto2
-    crypto = crypto.split("");
-    crypto2 = crypto
-    cryptotam = crypto.length
+    alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+    alfabetoTam = alfabeto.length
 
-    for (a = 0; a <= cryptotam; a++) {
-        crypto[a] = crypto[a].replace(/A/gi, "B")
-        if (crypto[a] != crypto2[a]) {
-            break
+    alfabetoTam = alfabeto.length // Transforma 
+
+    if (chave = 1) {
+
+        for (let a = 0; a < cryptogTam; a++) { //
+
+            for (let h = 1; h < alfabetoTam; h++) { //
+
+                cryptog[a] = cryptog[a].replace(alfabeto[h - 1], alfabeto[h]) //
+
+                if (cryptog[a] != cryptog2[a]) {
+                    break // Acaba com o for quando detecta difença das letras
+                }
+            }
         }
-        else { }
-        crypto[a] = crypto[a].replace(/B/gi, "C")
-        if (crypto[a] != crypto2[a]) {
-            break
-        }
-        else { }
-        crypto[a] = crypto[a].replace(/C/gi, "D")
-        if (crypto[a] != crypto2[a]) {
-            break
-        }
-        else { }
-        crypto[a] = crypto[a].replace(/D/gi, "E")
-        if (crypto[a] != crypto2[a]) {
-            break
-        }
-        else { }
-        crypto[a] = crypto[a].replace(/E/gi, "F")
-        if (crypto[a] != crypto2[a]) {
-            break
-        }
-        else { }
-        crypto[a] = crypto[a].replace(/F/gi, "G")
-        if (crypto[a] != crypto2[a]) {
-            break
-        }
-        else { }
-        crypto[a] = crypto[a].replace(/G/gi, "H")
-        if (crypto[a] != crypto2[a]) {
-            break
-        }
-        else { }
-        crypto[a] = crypto[a].replace(/H/gi, "I")
-        if (crypto[a] != crypto2[a]) {
-            break
-        }
-        else { }
-        crypto[a] = crypto[a].replace(/I/gi, "J")
-        if (crypto[a] != crypto2[a]) {
-            break
-        }
-        else { }
-        crypto[a] = crypto[a].replace(/J/gi, "K")
-        if (crypto[a] != crypto2[a]) {
-            break
-        }
-        else { }
-        crypto[a] = crypto[a].replace(/K/gi, "L")
-        if (crypto[a] != crypto2[a]) {
-            break
-        }
-        else { }
-        crypto[a] = crypto[a].replace(/L/gi, "M")
-        if (crypto[a] != crypto2[a]) {
-            break
-        }
-        else { }
-        crypto[a] = crypto[a].replace(/M/gi, "N")
-        if (crypto[a] != crypto2[a]) {
-            break
-        }
-        else { }
-        crypto[a] = crypto[a].replace(/N/gi, "O")
-        if (crypto[a] != crypto2[a]) {
-            break
-        }
-        else { }
-        crypto[a] = crypto[a].replace(/O/gi, "P")
-        if (crypto[a] != crypto2[a]) {
-            break
-        }
-        else { }
-        crypto[a] = crypto[a].replace(/P/gi, "Q")
-        if (crypto[a] != crypto2[a]) {
-            break
-        }
-        else { }
-        crypto[a] = crypto[a].replace(/Q/gi, "R")
-        if (crypto[a] != crypto2[a]) {
-            break
-        }
-        else { }
-        crypto[a] = crypto[a].replace(/R/gi, "S")
-        if (crypto[a] != crypto2[a]) {
-            break
-        }
-        else { }
-        crypto[a] = crypto[a].replace(/S/gi, "T")
-        if (crypto[a] != crypto2[a]) {
-            break
-        }
-        else { }
-        crypto[a] = crypto[a].replace(/T/gi, "U")
-        if (crypto[a] != crypto2[a]) {
-            break
-        }
-        else { }
-        crypto[a] = crypto[a].replace(/U/gi, "V")
-        if (crypto[a] != crypto2[a]) {
-            break
-        }
-        else { }
-        crypto[a] = crypto[a].replace(/V/gi, "W")
-        if (crypto[a] != crypto2[a]) {
-            break
-        }
-        else { }
-        crypto[a] = crypto[a].replace(/W/gi, "Z")
-        if (crypto[a] != crypto2[a]) {
-            break
-        }
-        else { }
-        crypto[a] = crypto[a].replace(/X/gi, "Y")
-        if (crypto[a] != crypto2[a]) {
-            break
-        }
-        else { }
-        crypto[a] = crypto[a].replace(/Y/gi, "Z")
-        if (crypto[a] != crypto2[a]) {
-            break
-        }
-        else { }
-        crypto[a] = crypto[a].replace(/Z/gi, "A")
-        if (crypto[a] != crypto2[a]) {
-            break
-        }
-        else { }
     }
 
+    if (chave = 2) {
 
-    saidah31.innerText = `${crypto}`
+        alfabeto = ["b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "a"]
+
+        for (let a = 0; a < cryptogTam; a++) { //
+
+            for (let h = 1; h < alfabetoTam; h++) { //
+
+                cryptog[a] = cryptog[a].replace(alfabeto[h - 1], alfabeto[h]) //
+
+                if (cryptog[a] != cryptog2[a]) {
+                    break
+                }
+            }
+        }
+    }
+    else {
+        alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+    }
+
+    cryptog = cryptog.join("")
+    saidah31.innerText = cryptog
     e.preventDefault()
-
-
+    
 })
-
-/* 
-    var texton
-    var texton2
-    var texton3
-    var texton4
-    var texton5
-    var texton6
-    var texton7
-    var texton8
-    var texton9
-    var texton10
-    var texton11
-    var texton12
-    var texton13
-    var texton14
-    var texton15
-    var texton16
-    var texton17
-    var texton18
-    var texton19
-    var texton20
-    var texton21
-    var texton22
-    var texton23
-    var texton24
-    var texton25
-    var texton26
-    
-    
-
-    frasedescrip = texto1.value
-    texton = frasedescrip.replace(/A/gi, "B")
-    
-    texton2 = texton.replace(/B/gi, "C")
-   
-    texton3 = texton2.replace(/C/gi, "D")
-   
-    texton4 = texton3.replace(/D/gi, "E")
-  
-    texton5 = texton4.replace(/E/gi, "F")
-    texton6 = texton5.replace(/F/gi, "G")
-    texton7 = texton6.replace(/G/gi, "H")
-    texton8 = texton7.replace(/H/gi, "I")
-    texton9 = texton8.replace(/I/g, "J")
-    texton10 = texton9.replace(/J/g, "K")
-    texton11 = texton10.replace("/K/g", "L")
-    texton12 = texton11.replace("/L/g", "M")
-    texton13 = texton12.replace("/M/g", "N")
-    texton14 = texton13.replace("/N/g", "O")
-    texton15 = texton14.replace("/O/g", "P")
-    texton16 = texton15.replace("/P/g", "Q")
-    texton17 = texton16.replace("/Q/g", "R")
-    texton18 = texton17.replace("/R/g", "S")
-    texton19 = texton18.replace("/S/g", "T")
-    texton20 = texton19.replace("/T/g", "U")
-    texton21 = texton20.replace("/U/g", "V")
-    texton22 = texton21.replace("/V/g", "W")
-    texton23 = texton22.replace("/W/g", "X")
-    texton24 = texton23.replace("/X/g", "Y")
-    texton25 = texton24.replace("/Y/g", "Z")
-    texton26 = texton25.replace("/Z/g", "A")
-    
-
-    saidah31.innerText = texton26
-    e.preventDefault()
-    alert(cod)
-    
-    */
