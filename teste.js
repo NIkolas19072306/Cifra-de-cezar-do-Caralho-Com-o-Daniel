@@ -25,7 +25,7 @@ var taxa = 25
 var cryptogTam
 var cryptog2
 var cryptog
-var alfabeto 
+var alfabeto
 var alfabetoTam
 
 
@@ -241,60 +241,46 @@ function leDoTeclado(evento) {
 
 
 document.onkeydown = leDoTeclado;
-//Botão 1
 
-botao1.addEventListener("click", (e) => {
 
-    cod = (x / 25) + 0.5
-    chave = cod
+
+
+
+
+
+botao1.addEventListener("click", (e) => { //Botão 1
 
     cryptog = texto1.value//Texto de entrada a ser codificado
     cryptog = cryptog.split("")//Quebra do texto em array de letras
     cryptog2 = cryptog.slice()//Copia de vetor
     cryptogTam = cryptog.length //Tamanho do Texto
 
-    alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+    cod = (x / 25) + 0.5
+    chave = cod
+
+    alert(cod)
+
+    alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z","a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+    
     alfabetoTam = alfabeto.length
 
-    alfabetoTam = alfabeto.length // Transforma 
+    alfabetoTam = alfabeto.length // Transforma as letras
 
-    if (chave = 1) {
+    for (let a = 0; a < cryptogTam; a++) { //Pega cada item do Vetor e faz a tranformação de um por um
 
-        for (let a = 0; a < cryptogTam; a++) { //
+        for (let h = 1; h < alfabetoTam; h++) { // Ide
 
-            for (let h = 1; h < alfabetoTam; h++) { //
+            cryptog[a] = cryptog[a].replace(alfabeto[h - chave], alfabeto[h]) //Identifica que letra tem que trocar
 
-                cryptog[a] = cryptog[a].replace(alfabeto[h - 1], alfabeto[h]) //
-
-                if (cryptog[a] != cryptog2[a]) {
-                    break // Acaba com o for quando detecta difença das letras
-                }
+            if (cryptog[a] != cryptog2[a]) {
+                break // Acaba com o for quando detecta difenreça das letras
             }
         }
-    }
-
-    if (chave = 2) {
-
-        alfabeto = ["b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "a"]
-
-        for (let a = 0; a < cryptogTam; a++) { //
-
-            for (let h = 1; h < alfabetoTam; h++) { //
-
-                cryptog[a] = cryptog[a].replace(alfabeto[h - 1], alfabeto[h]) //
-
-                if (cryptog[a] != cryptog2[a]) {
-                    break
-                }
-            }
-        }
-    }
-    else {
-        alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
     }
 
     cryptog = cryptog.join("")
     saidah31.innerText = cryptog
     e.preventDefault()
-    
+
 })
+
