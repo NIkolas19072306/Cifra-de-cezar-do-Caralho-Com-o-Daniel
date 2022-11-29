@@ -3,6 +3,10 @@ var pincel = tela.getContext('2d'); // Váriavel usada para pintar na tela.
 var botao1 = document.querySelector("#botao1")
 var saidah31 = document.querySelector("#h31")  // Saida do texto cryptografado
 var texto1 = document.querySelector("#texto1"); //Entrada do texto para cryptografar
+var botao2 = document.querySelector("#botao2")
+var saidah32 = document.querySelector("#h32")  // Saida do texto cryptografado
+var texto2 = document.querySelector("#texto2"); //Entrada do texto para cryptografar
+
 
 // Váriavel que define a posição do objeto.
 var x = 12.5
@@ -170,7 +174,7 @@ function limpaTela() {
     var descer = 0
     while (descer <= 50) {
         for (var imp = 0; imp <= 625; imp = imp + 25) {
-            pincel.fillStyle = "white"
+            pincel.fillStyle = "bisque"
             pincel.strokeStyle = "black"
             pincel.beginPath()
             pincel.rect(imp, descer, 25, 25)
@@ -236,18 +240,13 @@ function leDoTeclado(evento) {
 }
 
 
-
 document.onkeydown = leDoTeclado;
-
-
-
-
-
 
 
 botao1.addEventListener("click", (e) => { //Botão 1
 
     cryptog = texto1.value//Texto de entrada a ser codificado
+    cryptog = cryptog.toLowerCase()
     cryptog = cryptog.split("")//Quebra do texto em array de letras
     cryptog2 = cryptog.slice()//Copia de vetor
     cryptogTam = cryptog.length //Tamanho do Texto
@@ -255,10 +254,8 @@ botao1.addEventListener("click", (e) => { //Botão 1
     cod = (x / 25) + 0.5
     chave = cod
 
-    alert(cod)
+    alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
-    alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z","a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-    
     alfabetoTam = alfabeto.length
 
     alfabetoTam = alfabeto.length // Transforma as letras
@@ -281,3 +278,37 @@ botao1.addEventListener("click", (e) => { //Botão 1
 
 })
 
+botao2.addEventListener("click", (e) => { //Botão 2
+
+
+    cryptog = texto2.value//Texto de entrada a ser codificado
+    cryptog = cryptog.toLowerCase()
+    cryptog = cryptog.split("")//Quebra do texto em array de letras
+    cryptog2 = cryptog.slice()//Copia de vetor
+    cryptogTam = cryptog.length //Tamanho do Texto
+
+    cod = (x / 25) + 0.5
+    chave = cod
+
+    alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+
+    alfabetoTam = alfabeto.length
+
+    alfabetoTam = alfabeto.length // Transforma as letras
+
+    for (let a = 0; a < cryptogTam; a++) { //Pega cada item do Vetor e faz a tranformação de um por um
+
+        for (let h = 1; h < alfabetoTam; h++) { // Ide
+
+            cryptog[a] = cryptog[a].replace(alfabeto[h - (26-chave)], alfabeto[h]) //Identifica que letra tem que trocar
+
+            if (cryptog[a] != cryptog2[a]) {
+                break // Acaba com o for quando detecta difenreça das letras
+            }
+        }
+    }
+
+    cryptog = cryptog.join("")
+    saidah32.innerText = cryptog
+    e.preventDefault()
+})
