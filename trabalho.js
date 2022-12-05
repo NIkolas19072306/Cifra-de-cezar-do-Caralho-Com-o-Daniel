@@ -174,7 +174,7 @@ function limpaTela() {
     var descer = 0
     while (descer <= 50) {
         for (var imp = 0; imp <= 625; imp = imp + 25) {
-            pincel.fillStyle = "bisque"
+            pincel.fillStyle = "white"
             pincel.strokeStyle = "black"
             pincel.beginPath()
             pincel.rect(imp, descer, 25, 25)
@@ -246,7 +246,7 @@ document.onkeydown = leDoTeclado;
 botao1.addEventListener("click", (e) => { //Botão 1
 
     cryptog = texto1.value//Texto de entrada a ser codificado
-    cryptog = cryptog.toLowerCase()
+    cryptog = cryptog.toLowerCase()//Adaptação para letra maiuscula
     cryptog = cryptog.split("")//Quebra do texto em array de letras
     cryptog2 = cryptog.slice()//Copia de vetor
     cryptogTam = cryptog.length //Tamanho do Texto
@@ -256,13 +256,12 @@ botao1.addEventListener("click", (e) => { //Botão 1
 
     alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
-    alfabetoTam = alfabeto.length
 
-    alfabetoTam = alfabeto.length // Transforma as letras
+    alfabetoTam = alfabeto.length
 
     for (let a = 0; a < cryptogTam; a++) { //Pega cada item do Vetor e faz a tranformação de um por um
 
-        for (let h = 1; h < alfabetoTam; h++) { // Ide
+        for (let h = 1; h < alfabetoTam; h++) { //Faz a troca de letras 
 
             cryptog[a] = cryptog[a].replace(alfabeto[h - chave], alfabeto[h]) //Identifica que letra tem que trocar
 
@@ -282,7 +281,7 @@ botao2.addEventListener("click", (e) => { //Botão 2
 
 
     cryptog = texto2.value//Texto de entrada a ser codificado
-    cryptog = cryptog.toLowerCase()
+    cryptog = cryptog.toLowerCase()//Adaptação para letra maiuscula
     cryptog = cryptog.split("")//Quebra do texto em array de letras
     cryptog2 = cryptog.slice()//Copia de vetor
     cryptogTam = cryptog.length //Tamanho do Texto
@@ -292,13 +291,11 @@ botao2.addEventListener("click", (e) => { //Botão 2
 
     alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
-    alfabetoTam = alfabeto.length
-
     alfabetoTam = alfabeto.length // Transforma as letras
 
     for (let a = 0; a < cryptogTam; a++) { //Pega cada item do Vetor e faz a tranformação de um por um
 
-        for (let h = 1; h < alfabetoTam; h++) { // Ide
+        for (let h = 1; h < alfabetoTam; h++) { //Faz a troca de letras 
 
             cryptog[a] = cryptog[a].replace(alfabeto[h - (26-chave)], alfabeto[h]) //Identifica que letra tem que trocar
 
