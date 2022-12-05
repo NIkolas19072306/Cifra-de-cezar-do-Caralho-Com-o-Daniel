@@ -174,7 +174,7 @@ function limpaTela() {
     var descer = 0
     while (descer <= 50) {
         for (var imp = 0; imp <= 625; imp = imp + 25) {
-            pincel.fillStyle = "white"
+            pincel.fillStyle = "bisque"
             pincel.strokeStyle = "black"
             pincel.beginPath()
             pincel.rect(imp, descer, 25, 25)
